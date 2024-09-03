@@ -1,0 +1,19 @@
+/* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+:root {
+  --main-font: "Inter";
+  --accent-font: "PressStart2P-Regular";
+  --title-weight: 700;
+  --card-weight: 400;
+  --bg-color: rgba(255, 255, 255, 1);
+  --accent-color: rgba(0, 0, 0, 1);
+  --gradient-color: #d3d3d3;
+  --gradient-top: #e7e7e7;
+  --gradient-bottom: #1a1a1a;
+  --label-stroke: rgba(255, 255, 255, 1);
+  --button-color-hover: rgba(255, 255, 255, 1);
+  --heart-contour-color: rgba(0, 0, 0, 1);
+  --heart-main-body-color: rgba(255, 0, 0, 1);
+  --floppy-color: rgba(255, 255, 255, 1);
+  --floppy-dialog-color: rgba(0, 0, 0, 1);
+  --text-dialog-color: rgba(255, 255, 255, 1);
+}
