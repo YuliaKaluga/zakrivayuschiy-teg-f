@@ -67,6 +67,7 @@
 
 .logo__tag {
   font-size: min(clamp(3.063rem, 2.71rem + 1.502vi, 4.063rem), 65px);
+  text-decoration: none;
 }
 
 .logo__title {
@@ -178,67 +179,36 @@
 
 .card__image {
   display: block;
+  inline-size: min(clamp(22.9375rem, 15.7852rem + 30.5164vw, 43.25rem), 692px);
   aspect-ratio: 1 / 1;
-  background-image: url("../images/image.png");
   background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-}
-
-.image_zero {
-  background-image: url("https://images.unsplash.com/photo-1534196511436-921a4e99f297?q=80&w=3387&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
-}
-
-.image_one {
-  background-image: url("https://media.istockphoto.com/id/1049791700/de/foto/wingsuiter-gleitet-hinunter-durch-hohen-himmel.jpg?s=612x612&w=0&k=20&c=nB_qmEuWRUZ82qHEbTk-TE4KLhN7rkBY5xXizQP-RkA=");
+  object-fit: cover;
+  object-position: center;
 }
 
 .image__sprint_one {
   filter: saturate(0.2);
-}
-.image_one_final {
-  background-image: url("https://images.unsplash.com/photo-1506748566756-07746caecd61?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MXw0MzQwOTc1fHxlbnwwfHx8fHw%3D");
 }
 
 .image__sprint_one_final {
   filter: saturate(3) brightness(120%);
 }
 
-.image_two {
-  background-image: url("https://images.unsplash.com/photo-1634929405014-8c8a4b19a296?q=80&w=3387&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
-}
-
 .image__sprint_two {
   filter: hue-rotate(30deg);
-}
-
-.image_two_final {
-  background-image: url("https://plus.unsplash.com/premium_photo-1661598655597-8e6720995532?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8ZnJpZW5kc3xlbnwwfHwwfHx8MA%3D%3D");
 }
 
 .image__sprint_two_final {
   filter: invert(1) contrast(60%);
 }
 
-.image_three {
-  background-image: url("https://images.unsplash.com/photo-1601881557868-34ad67bd4633?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
-}
-
 .image__sprint_three {
   filter: sepia(90%);
-}
-
-.image_three_final {
-  background-image: url("https://images.unsplash.com/photo-1495606500376-c00663c0f5a2?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
 }
 
 .image__sprint_three_final {
   filter: blur(10px);
   clip-path: inset(0);
-}
-
-.image_here {
-  background-image: url("https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExaWh3d3kycGltNmg5MHlwODlwYzQ1ZmVpaDMxMmg2em9iaTZsbWJrYiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/hWGI9TQGsKsdBcxRi5/giphy.webp");
 }
 
 .image__sprint_here {
@@ -361,18 +331,6 @@
   transition: width 0.5s ease-in-out;
 }
 
-.button__styles::before {
-  content: "";
-  width: 0%;
-  block-size: 100%;
-  position: absolute;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  background-color: var(--accent-color);
-  transition: width 0.5s ease-in-out;
-}
-
 .button__styles:hover::before {
   width: 100%;
 }
@@ -389,7 +347,7 @@
   flex-direction: column;
   align-items: center;
   gap: 8px;
-  margin: 54px auto 0;
+  margin: auto;
   border: 2px solid var(--accent-color);
   padding: 15px 17px;
   background-color: var(--bg-color);
@@ -442,7 +400,7 @@
 
 .dialog__pop-up::backdrop {
   background-color: var(--bg-color);
-  opacity: 0.5;
+  opacity: 0.75;
 }
 
 .dialog__content {
@@ -470,7 +428,16 @@
   line-height: 12.6px;
   font-variation-settings: wght var(--card-weight);
   background-color: transparent;
-  cursor: pointer;
+  position: relative;
+}
+
+.dialog__button:before {
+  background-color: var(--text-dialog-color);
+  mix-blend-mode: difference;
+}
+
+.dialog__button:focus-visible {
+  box-shadow: 2px 2px 0 var(--text-dialog-color);
 }
 
 .dialog__pop-up.closed {
